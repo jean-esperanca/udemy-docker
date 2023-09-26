@@ -8,10 +8,12 @@ from flask_mysqldb import MySQL
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
-app.config["MYSQL_HOST"] = 'host.docker.internal'
+app.config["MYSQL_HOST"] = 'mysql_api_container'
 app.config["MYSQL_USER"] = 'root'
-app.config["MYSQL_PASSWORD"] = 'root'
-app.config["MYSQL_DB"] = 'flaskhost'
+app.config["MYSQL_PASSWORD"] = ''
+app.config["MYSQL_DB"] = 'flaskdocker'
+
+mysql = MySQL(app)
 
 @app.route("/", methods=["GET"])
 def index():
@@ -19,7 +21,7 @@ def index():
     return data.json()
 
 # route localhost db
-@app.route("inserthost", methods=["POST"])
+@app.route("/inserthost", methods=["POST"])
 def inserthost():
     data = requests.get('https://randomuser.me/api').json()
     username = data['results'][0]['name']['first']
