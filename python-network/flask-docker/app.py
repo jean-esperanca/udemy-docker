@@ -4,6 +4,7 @@ import requests
 import flask_mysqldb
 from flask_mysqldb import MySQL
 
+# localhost db
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
@@ -17,6 +18,7 @@ def index():
     data = requests.get('https://randomuser.me/api')
     return data.json()
 
+# route localhost db
 @app.route("inserthost", methods=["POST"])
 def inserthost():
     data = requests.get('https://randomuser.me/api').json()
