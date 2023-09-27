@@ -1,6 +1,23 @@
-name: "X"
+# Comentário de linha
+name: "X"             # Aqui também
 age: 1
 
 objeto:
   id: 1
   arquivo: "TESTE"
+  float: 16.4
+  string: Teste 2     # aceita string sem aspas
+  nulo: ~             # ~ ou null
+  verdadeiro: On      # Aceita True ou On
+  falso: off          # Aceita Falso ou Off
+  objeto_int:
+    id: 2
+     
+vetor_1: [1, 2, 3, 4] # modo 1
+vetor_2:              # modo 2
+  - 1
+  - "text"
+  - Texto
+  - 4.2
+
+objeto2: {a: 1, b: 2, c: 3, objeto_interno: {a: 1}}
