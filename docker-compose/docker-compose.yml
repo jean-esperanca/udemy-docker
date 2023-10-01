@@ -21,7 +21,7 @@ services:
       - "5000:5000"
     restart: always
     volumes:
-      - "C:\\Users\\JeanCarlosEsperança\\Documentos\\GitHub\\udemy-docker\\docker-compose\flask:/app"
+      - "C:\\Users\\jeane\\OneDrive\\Documentos\\repositories\\udemy-docker-1\\docker-compose\\flask:/app"
     networks:
       - dockercompose
 
